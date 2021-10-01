@@ -10,9 +10,9 @@ This project is convenient for people who want to get into open source and contr
 
 *Don't hesitate to ask me for help on my [Discord server](https://discord.gg/nEDcagb), I would help you with great pleasure!*
 
-<!-- ## 🤖 Add the bot on your server
+## 🤖 Add the bot on your server
 
-You just need to click on [this link](https://discord.com/oauth2/authorize?client_id=761568927188123669&scope=bot&permissions=1141124160) and validate the form without changing any permission. -->
+You just need to click on [this link](https://discord.com/oauth2/authorize?client_id=761568927188123669&scope=bot&permissions=380108139840) and validate the form without changing any permission.
 
 <!-- ## 🌐 Adding a language
 
