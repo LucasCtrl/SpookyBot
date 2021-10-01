@@ -5,7 +5,7 @@ module.exports = (client, webhook) => {
   console.log(`I'm online sir!`)
 
   const embed = new MessageEmbed()
-    .setColor(client.config.colors.success)
+    .setColor(client.config.colors.info)
     .setAuthor('- Back online!', client.user.avatarURL({ dynamic: true }))
     .addField('Informations', `**Prefix:** ${client.config.prefix}\n**Servers:** ${client.guilds.cache.size}`)
     .setFooter(currentDate())

@@ -19,9 +19,9 @@ module.exports = (client) => {
     }
   }
 
-  const dirs = []
+  const dirs = ['Info']
 
-  if ((process.env.NODE_ENV = 'dev')) dirs.push('Development')
+  if (process.env.NODE_ENV == 'dev') dirs.push('Development')
 
   dirs.forEach((dir) => load(dir))
 }
