@@ -1,3 +1,5 @@
+const { MessageEmbed } = require('discord.js')
+const currentDate = require('../utils/currentDate')
 const reactMessage = require('../utils/reactMessage')
 
 module.exports = async (client, webhook, message) => {
@@ -17,10 +19,18 @@ module.exports = async (client, webhook, message) => {
 
     if (!cmd) return
 
+    const embed = new MessageEmbed()
+      .setColor(client.config.colors.info)
+      .setAuthor('- New command!', client.user.avatarURL({ dynamic: true }))
+      .setDescription(`Command: ${client.config.prefix}${command}`)
+      .setFooter(currentDate())
+
+    webhook.send({ embeds: [embed] })
+
     return cmd.run(client, message)
   }
 
   // -------------------- Messages without prefix --------------------
 
-  reactMessage(message)
+  reactMessage(client, message, webhook)
 }
