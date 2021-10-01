@@ -1,7 +1,7 @@
 const { readdirSync } = require('fs')
 const { resolve } = require('path')
 
-module.exports = (client) => {
+module.exports = (client, webhook) => {
   const events = readdirSync(resolve(__dirname, '../events/')).filter((x) => x.endsWith('.js'))
   for (let file of events) {
     const event = require(`../events/${file}`)
@@ -9,6 +9,6 @@ module.exports = (client) => {
 
     console.log(`Load event: ${eventName}`)
 
-    client.on(eventName, event.bind(null, client))
+    client.on(eventName, event.bind(null, client, webhook))
   }
 }

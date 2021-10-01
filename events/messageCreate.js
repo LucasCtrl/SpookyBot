@@ -1,6 +1,6 @@
 const reactMessage = require('../utils/reactMessage')
 
-module.exports = async (client, message) => {
+module.exports = async (client, webhook, message) => {
   if (message.author.bot) return // Ignore all bots
   if (message.author.id == client.user.id) return // Ignore our bot
   if (message.channel.type == 'dm') return // Ignore DM messages
