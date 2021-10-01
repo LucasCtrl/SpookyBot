@@ -1,3 +1,5 @@
+const reactMessage = require('../utils/reactMessage')
+
 module.exports = async (client, message) => {
   if (message.author.bot) return // Ignore all bots
   if (message.author.id == client.user.id) return // Ignore our bot
@@ -19,5 +21,6 @@ module.exports = async (client, message) => {
   }
 
   // -------------------- Messages without prefix --------------------
-  console.log(message.content)
+
+  reactMessage(message)
 }
