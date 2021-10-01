@@ -19,5 +19,25 @@ module.exports = async (client, message) => {
   }
 
   // -------------------- Messages without prefix --------------------
-  console.log(message.content)
+  let emojis = [
+    {
+      id: 'spookybot',
+      emoji: '761602615326146590',
+      word: 'spooky',
+    },
+    {
+      id: 'pumpkin',
+      emoji: '🎃',
+      word: 'halloween',
+    },
+  ]
+
+  let words = message.content.trim().split(' ')
+  words.forEach((word) => {
+    emojis.forEach((emoji) => {
+      if (word.toUpperCase() == emoji.word.toUpperCase()) {
+        message.react(emoji.emoji)
+      }
+    })
+  })
 }
