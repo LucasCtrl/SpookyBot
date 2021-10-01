@@ -71,8 +71,7 @@ Before contributing to this project, make sure you have read the [contribution g
 
 Give a ⭐️ if you like this project!
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="lucasalt" data-color="#FFDD00" data-emoji=""  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-<br/>
+<a href="https://www.buymeacoffee.com/lucasalt"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lucasalt&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
 
 ## 📝 License
 
