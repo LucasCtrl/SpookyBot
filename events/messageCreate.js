@@ -1,3 +1,5 @@
+const reactMessage = require('../utils/reactMessage')
+
 module.exports = async (client, message) => {
   if (message.author.bot) return // Ignore all bots
   if (message.author.id == client.user.id) return // Ignore our bot
@@ -19,25 +21,6 @@ module.exports = async (client, message) => {
   }
 
   // -------------------- Messages without prefix --------------------
-  let emojis = [
-    {
-      id: 'spookybot',
-      emoji: '761602615326146590',
-      word: 'spooky',
-    },
-    {
-      id: 'pumpkin',
-      emoji: '🎃',
-      word: 'halloween',
-    },
-  ]
 
-  let words = message.content.trim().split(' ')
-  words.forEach((word) => {
-    emojis.forEach((emoji) => {
-      if (word.toUpperCase() == emoji.word.toUpperCase()) {
-        message.react(emoji.emoji)
-      }
-    })
-  })
+  reactMessage(message)
 }
