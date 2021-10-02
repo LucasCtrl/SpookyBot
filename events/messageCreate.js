@@ -1,7 +1,9 @@
+import { MessageEmbed } from 'discord.js'
 import { createEvent } from '../models/analitycs.js'
 import reactMessage from '../utils/reactMessage.js'
+import currentDate from '../utils/currentDate.js'
 
-export default async (client, message) => {
+export default async (client, webhook, message) => {
   if (message.author.bot) return // Ignore all bots
   if (message.author.id == client.user.id) return // Ignore our bot
   if (message.channel.type == 'dm') return // Ignore DM messages
@@ -17,11 +19,20 @@ export default async (client, message) => {
     const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
 
     if (!cmd) return
+
+    const embed = new MessageEmbed()
+      .setColor(client.config.colors.info)
+      .setAuthor('- New command!', client.user.avatarURL({ dynamic: true }))
+      .setDescription(`Command: ${client.config.prefix}${command}`)
+      .setFooter(currentDate())
+    webhook.send({ embeds: [embed] })
+
     createEvent('command', cmd.config.command)
+
     return cmd.run(client, message)
   }
 
   // -------------------- Messages without prefix --------------------
 
-  reactMessage(message)
+  reactMessage(client, message, webhook)
 }
