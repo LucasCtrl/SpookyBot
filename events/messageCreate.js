@@ -1,3 +1,4 @@
+import { createEvent } from '../models/analitycs.js'
 import reactMessage from '../utils/reactMessage.js'
 
 export default async (client, message) => {
@@ -16,8 +17,7 @@ export default async (client, message) => {
     const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
 
     if (!cmd) return
-    console.log(cmd)
-
+    createEvent('command', cmd.config.command)
     return cmd.run(client, message)
   }
 

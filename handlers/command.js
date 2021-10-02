@@ -1,10 +1,10 @@
 import { readdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import path, { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
 
 export default async (client) => {
   const load = async (dir) => {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url))
+    const __dirname = dirname(fileURLToPath(import.meta.url))
     const commands = readdirSync(resolve(__dirname, `../commands/${dir}`)).filter((x) => x.endsWith('.js'))
     for (let file of commands) {
       const cmd = await import(`../commands/${dir}/${file}`)

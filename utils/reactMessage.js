@@ -1,3 +1,5 @@
+import { createEmojiRecord } from '../models/analitycs.js'
+
 const emojis = [
   {
     id: 'spookybot',
@@ -23,6 +25,7 @@ const reactMessage = (message) => {
     emojis.forEach((emoji) => {
       if (word.toUpperCase() == emoji.word.toUpperCase()) {
         message.react(emoji.emoji)
+        createEmojiRecord(emoji.id)
       }
     })
   })
