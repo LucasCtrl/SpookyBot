@@ -1,7 +1,7 @@
-const { MessageEmbed } = require('discord.js')
-const currentDate = require('../utils/currentDate')
+import { MessageEmbed } from 'discord.js'
+import currentDate from '../utils/currentDate.js'
 
-module.exports = (client, webhook) => {
+export default (client, webhook) => {
   console.log(`I'm online sir!`)
 
   const embed = new MessageEmbed()

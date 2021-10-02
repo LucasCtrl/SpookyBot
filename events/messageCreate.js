@@ -1,8 +1,9 @@
-const { MessageEmbed } = require('discord.js')
-const currentDate = require('../utils/currentDate')
-const reactMessage = require('../utils/reactMessage')
+import { MessageEmbed } from 'discord.js'
+import { createEvent } from '../models/analitycs.js'
+import reactMessage from '../utils/reactMessage.js'
+import currentDate from '../utils/currentDate.js'
 
-module.exports = async (client, webhook, message) => {
+export default async (client, webhook, message) => {
   if (message.author.bot) return // Ignore all bots
   if (message.author.id == client.user.id) return // Ignore our bot
   if (message.channel.type == 'dm') return // Ignore DM messages
@@ -24,8 +25,9 @@ module.exports = async (client, webhook, message) => {
       .setAuthor('- New command!', client.user.avatarURL({ dynamic: true }))
       .setDescription(`Command: ${client.config.prefix}${command}`)
       .setFooter(currentDate())
-
     webhook.send({ embeds: [embed] })
+
+    createEvent('command', cmd.config.command)
 
     return cmd.run(client, message)
   }

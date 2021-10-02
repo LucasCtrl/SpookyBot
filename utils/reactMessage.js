@@ -1,7 +1,8 @@
-const { MessageEmbed } = require('discord.js')
-const currentDate = require('../utils/currentDate')
+import { MessageEmbed } from 'discord.js'
+import currentDate from '../utils/currentDate.js'
+import { createEmojiRecord } from '../models/analitycs.js'
 
-let emojis = [
+const emojis = [
   {
     id: 'spookybot',
     emoji: '761602615326146590',
@@ -19,7 +20,7 @@ let emojis = [
   },
 ]
 
-module.exports = (client, message, webhook) => {
+const reactMessage = (client, message, webhook) => {
   let words = message.content.trim().split(' ')
 
   words.forEach((word) => {
@@ -32,9 +33,12 @@ module.exports = (client, message, webhook) => {
           .setAuthor('- New reaction!', client.user.avatarURL({ dynamic: true }))
           .setDescription(`Emoji: ${emoji.emoji}`)
           .setFooter(currentDate())
-
         webhook.send({ embeds: [embed] })
+
+        createEmojiRecord(emoji.id)
       }
     })
   })
 }
+
+export default reactMessage

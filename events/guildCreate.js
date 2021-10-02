@@ -1,7 +1,7 @@
-const { MessageEmbed } = require('discord.js')
-const currentDate = require('../utils/currentDate')
+import { MessageEmbed } from 'discord.js'
+import currentDate from '../utils/currentDate.js'
 
-module.exports = (client, webhook, guild) => {
+export default (client, webhook, guild) => {
   const embed = new MessageEmbed()
     .setColor(client.config.colors.success)
     .setAuthor(`- Join server ${guild.name} with ${guild.memberCount} users!`, client.user.avatarURL({ dynamic: true }))
