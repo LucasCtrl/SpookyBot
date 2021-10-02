@@ -1,7 +1,10 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 
-const { Client, Intents, Collection } = require('discord.js')
-const config = require('./config.json')
+import { Client, Intents, Collection } from 'discord.js'
+import fs from 'node:fs/promises'
+
+const config = JSON.parse(await fs.readFile('config.json'))
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] })
 client.config = config
@@ -17,7 +20,7 @@ const handlers = ['command', 'event']
 
 cmds.forEach((x) => (client[x] = new Collection()))
 // TODO: Add webhook in arguments
-handlers.forEach((x) => require(`./handlers/${x}`)(client))
+handlers.forEach((x) => import(`./handlers/${x}.js`).then((module) => module.default(client)))
 
 // -------------------- Login --------------------
 

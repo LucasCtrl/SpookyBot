@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  sourceType: 'module',
   env: {
     browser: true,
     node: true,

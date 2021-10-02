@@ -1,6 +1,6 @@
-const reactMessage = require('../utils/reactMessage')
+import reactMessage from '../utils/reactMessage.js'
 
-module.exports = async (client, message) => {
+export default async (client, message) => {
   if (message.author.bot) return // Ignore all bots
   if (message.author.id == client.user.id) return // Ignore our bot
   if (message.channel.type == 'dm') return // Ignore DM messages
@@ -16,6 +16,7 @@ module.exports = async (client, message) => {
     const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
 
     if (!cmd) return
+    console.log(cmd)
 
     return cmd.run(client, message)
   }

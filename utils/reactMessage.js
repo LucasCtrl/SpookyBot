@@ -1,4 +1,4 @@
-let emojis = [
+const emojis = [
   {
     id: 'spookybot',
     emoji: '761602615326146590',
@@ -16,7 +16,7 @@ let emojis = [
   },
 ]
 
-module.exports = (message) => {
+const reactMessage = (message) => {
   let words = message.content.trim().split(' ')
 
   words.forEach((word) => {
@@ -27,3 +27,5 @@ module.exports = (message) => {
     })
   })
 }
+
+export default reactMessage

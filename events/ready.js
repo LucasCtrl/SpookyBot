@@ -1,4 +1,4 @@
-module.exports = (client) => {
+export default (client) => {
   console.log(`I'm online sir!`)
   console.log('Config')
   console.log(`Prefix: ${client.config.prefix}`)
