@@ -41,6 +41,18 @@ You can see that the `emoji` element is an emoji, but you can also use a custom 
 5.1 If you want to install node modules you could just add it into your local package.json and run the `make build_dev_image` after that you need to recreate the container.
 6. Test the bot is connected by running `<your-prefix>help` to get a list of commands, and then initialize the DB by running `<your-prefix>emitgc`. It should then respond with "Join <your-server> with <#> users,
 7. Test that the bot reacts to comments by typing one of the words in `lang/<your-lang>.js`. The bot should respond with an emoji! -->
+<!-- 
+### Docker
+
+To run the bot inside a docker container, make sure to create the .env
+file and then run the following:
+
+```bash
+docker build . -t spooky-bot --no-cache
+docker run --name spooky-bot --env-file .env --rm -d spooky-bot
+``` 
+
+Or with `docker compose up` -->
 
 ## 👤 Author
 
