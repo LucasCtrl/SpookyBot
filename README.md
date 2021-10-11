@@ -50,7 +50,9 @@ file and then run the following:
 ```bash
 docker build . -t spooky-bot --no-cache
 docker run --name spooky-bot --env-file .env --rm -d spooky-bot
-``` -->
+``` 
+
+Or with `docker compose up` -->
 
 ## 👤 Author
 
