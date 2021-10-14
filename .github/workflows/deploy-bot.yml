@@ -1,8 +1,6 @@
 name: Deployment Workflow
 
-on:
-  push:
-    branches: [ feature/deployAction ]
+on: workflow_dispatch
 
 jobs:
   deploy:
@@ -16,5 +14,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            whoami
-            ls -al
+            cd ~/SpookyBot/
+            git pull --ff-only
+            docker-compose -f ~/SpookyBot/docker-compose.yml down -v
+            docker-compose -f ~/SpookyBot/docker-compose.yml up -d
