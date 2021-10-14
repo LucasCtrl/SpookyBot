@@ -2,11 +2,18 @@
   "name": "spookybot",
   "version": "2.0.0",
   "description": "A spooky Discord bot",
-  "main": "core.js",
+  "exports": "./core.js",
   "repository": "https://github.com/LucasCtrl/SpookyBot.git",
   "author": "LucasCtrl <lucasalt@protonmail.com>",
   "license": "MIT",
   "private": true,
+  "type": "module",
+  "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "lowdb": "^3.0.0"
+  },
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -16,6 +23,6 @@
   },
   "scripts": {
     "dev": "nodemon --inspect ./core.js",
-    "start": "node core.js"
+    "start": "node ./core.js"
   }
 }

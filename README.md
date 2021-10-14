@@ -10,9 +10,9 @@ This project is convenient for people who want to get into open source and contr
 
 *Don't hesitate to ask me for help on my [Discord server](https://discord.gg/nEDcagb), I would help you with great pleasure!*
 
-<!-- ## 🤖 Add the bot on your server
+## 🤖 Add the bot on your server
 
-You just need to click on [this link](https://discord.com/oauth2/authorize?client_id=761568927188123669&scope=bot&permissions=1141124160) and validate the form without changing any permission. -->
+You just need to click on [this link](https://discord.com/oauth2/authorize?client_id=761568927188123669&scope=bot&permissions=380108139840) and validate the form without changing any permission.
 
 <!-- ## 🌐 Adding a language
 
@@ -41,6 +41,18 @@ You can see that the `emoji` element is an emoji, but you can also use a custom 
 5.1 If you want to install node modules you could just add it into your local package.json and run the `make build_dev_image` after that you need to recreate the container.
 6. Test the bot is connected by running `<your-prefix>help` to get a list of commands, and then initialize the DB by running `<your-prefix>emitgc`. It should then respond with "Join <your-server> with <#> users,
 7. Test that the bot reacts to comments by typing one of the words in `lang/<your-lang>.js`. The bot should respond with an emoji! -->
+<!-- 
+### Docker
+
+To run the bot inside a docker container, make sure to create the .env
+file and then run the following:
+
+```bash
+docker build . -t spooky-bot --no-cache
+docker run --name spooky-bot --env-file .env --rm -d spooky-bot
+``` 
+
+Or with `docker compose up` -->
 
 ## 👤 Author
 
@@ -71,8 +83,7 @@ Before contributing to this project, make sure you have read the [contribution g
 
 Give a ⭐️ if you like this project!
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="lucasalt" data-color="#FFDD00" data-emoji=""  data-font="Poppins" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-<br/>
+<a href="https://www.buymeacoffee.com/lucasalt"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lucasalt&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
 
 ## 📝 License
 
