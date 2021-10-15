@@ -4,6 +4,8 @@ dotenv.config()
 import { Client, Intents, Collection, WebhookClient } from 'discord.js'
 import fs from 'node:fs/promises'
 
+import './db.js'
+
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 })

@@ -1,5 +1,5 @@
 import { MessageEmbed } from 'discord.js'
-import { createEvent } from '../models/analitycs.js'
+import { createCommand } from '../models/commands.js'
 import reactMessage from '../utils/reactMessage.js'
 import currentDate from '../utils/currentDate.js'
 
@@ -27,7 +27,7 @@ export default async (client, webhook, message) => {
       .setFooter(currentDate())
     webhook.send({ embeds: [embed] })
 
-    createEvent('command', cmd.config.command)
+    createCommand(cmd.config.command)
 
     return cmd.run(client, message)
   }

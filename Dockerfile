@@ -8,6 +8,4 @@ RUN npm install --production
 
 COPY . .
 
-RUN mkdir db
-
 ENTRYPOINT [ "npm", "start" ]

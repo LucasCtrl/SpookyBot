@@ -1,4 +1,5 @@
 import { MessageEmbed } from 'discord.js'
+import { createEvent } from '../models/events.js'
 import currentDate from '../utils/currentDate.js'
 
 export default (client, webhook, guild) => {
@@ -8,4 +9,5 @@ export default (client, webhook, guild) => {
     .setFooter(currentDate())
 
   webhook.send({ embeds: [embed] })
+  createEvent('guildCreate')
 }
