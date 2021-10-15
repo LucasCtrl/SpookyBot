@@ -1,6 +1,6 @@
 import { MessageEmbed } from 'discord.js'
+import { createReaction } from '../models/reactions.js'
 import currentDate from '../utils/currentDate.js'
-import { createEmojiRecord } from '../models/analitycs.js'
 
 const emojis = [
   {
@@ -35,7 +35,7 @@ const reactMessage = (client, message, webhook) => {
           .setFooter(currentDate())
         webhook.send({ embeds: [embed] })
 
-        createEmojiRecord(emoji.id)
+        createReaction(emoji.id)
       }
     })
   })

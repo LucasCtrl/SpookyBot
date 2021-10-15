@@ -21,7 +21,6 @@ jspm_packages/
 
 # Config
 .env
-db
 
 # IDE
 .vscode
