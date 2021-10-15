@@ -27,7 +27,7 @@ export default async (client, webhook, message) => {
       .setFooter(currentDate())
     webhook.send({ embeds: [embed] })
 
-    createCommand(cmd.config.command)
+    createCommand(cmd.command)
 
     return cmd.run(client, message)
   }
