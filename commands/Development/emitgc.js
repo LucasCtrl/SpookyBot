@@ -1,7 +1,5 @@
 export default {
-  config: {
-    command: 'emitgc',
-  },
+  command: 'emitgc',
 
   run: async (client, message) => {
     client.emit('guildCreate', message.guild)

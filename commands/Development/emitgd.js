@@ -1,7 +1,5 @@
 export default {
-  config: {
-    command: 'emitgd',
-  },
+  command: 'emitgd',
 
   run: async (client, message) => {
     client.emit('guildDelete', message.guild)
