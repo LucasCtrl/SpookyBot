@@ -34,5 +34,11 @@ export default async (client, webhook, message) => {
 
   // -------------------- Messages without prefix --------------------
 
-  reactMessage(client, message, webhook)
+  if (
+    message.channel.permissionsFor(client.user).has(['USE_EXTERNAL_EMOJIS']) &&
+    message.channel.permissionsFor(client.user).has(['ADD_REACTIONS'])
+  ) {
+    // Check if the bot has the permission to react and use external emojis
+    reactMessage(client, message, webhook)
+  }
 }
