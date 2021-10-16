@@ -1,5 +1,5 @@
 import { MessageEmbed } from 'discord.js'
-import { createEvent } from '../models/events.js'
+import { createEvent } from '../models/analitycs/events.js'
 import currentDate from '../utils/currentDate.js'
 
 export default (client, webhook) => {
@@ -12,5 +12,5 @@ export default (client, webhook) => {
     .setFooter(currentDate())
 
   webhook.send({ embeds: [embed] })
-  createEvent('ready')
+  createEvent('ready').catch((err) => console.log('Error while creating the ready event document: ', err))
 }

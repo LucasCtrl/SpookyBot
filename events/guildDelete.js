@@ -1,5 +1,5 @@
 import { MessageEmbed } from 'discord.js'
-import { createEvent } from '../models/events.js'
+import { createEvent } from '../models/analitycs/events.js'
 import currentDate from '../utils/currentDate.js'
 
 export default (client, webhook, guild) => {
@@ -12,5 +12,5 @@ export default (client, webhook, guild) => {
     .setFooter(currentDate())
 
   webhook.send({ embeds: [embed] })
-  createEvent('guildDelete')
+  createEvent('guildDelete').catch((err) => console.log('Error while creating the guildDelete event document: ', err))
 }
