@@ -59,7 +59,7 @@ Or with `docker compose up` -->
 
 ## 🤝 Contributing
 
-Before contributing to this project, make sure you have read the [contribution guidelines](https://github.com/LucasCtrl/SpookyBot/blob/main/CONTRIBUTING.md)!
+Before contributing to this project, make sure you have read the [contribution guidelines](https://github.com/LucasCtrl/SpookyBot/blob/dev/CONTRIBUTING.md)!
 
 1. Fork it (https://github.com/LucasCtrl/SpookyBot/fork)
 2. Create your feature branch (`git checkout -b feature/fooBar`)

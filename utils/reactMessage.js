@@ -34,9 +34,13 @@ const reactMessage = async (client, message, webhook) => {
 
   translation.emojis.forEach((emoji) => {
     if (messageContainWord(emoji.words, message.content.toLowerCase())) {
-      message.react(emoji.emoji)
-      createReaction(emoji.id).catch((err) => console.log('Error while creating the reaction document: ', err))
-      triggeredEmoji.push(emoji.emoji)
+      message
+        .react(emoji.emoji)
+        .then(() => {
+          createReaction(emoji.id).catch((err) => console.log('Error while creating the reaction document: ', err))
+          triggeredEmoji.push(emoji.emoji)
+        })
+        .catch((err) => console.log('Failed to add reaction: ', err))
     }
   })
 
