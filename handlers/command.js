@@ -21,7 +21,7 @@ export default async (client) => {
     }
   }
 
-  const dirs = ['Info']
+  const dirs = ['Configuration', 'Info']
 
   if (process.env.NODE_ENV == 'dev') dirs.push('Development')
 

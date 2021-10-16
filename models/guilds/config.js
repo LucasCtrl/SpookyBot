@@ -30,4 +30,13 @@ const getGuildConfig = (id) => {
   })
 }
 
-export { createGuildConfig, getGuildConfig }
+const updateGuildConfig = (id, config) => {
+  return new Promise((resolve, reject) => {
+    GuildConfig.updateOne({ _id: id }, { $set: config }, (err, result) => {
+      if (err) return reject(err)
+      resolve(result)
+    })
+  })
+}
+
+export { createGuildConfig, getGuildConfig, updateGuildConfig }

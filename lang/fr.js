@@ -7,47 +7,47 @@ export const emojis = [
   {
     id: 'bat',
     emoji: '🦇',
-    words: ['bat'],
+    words: ['chauve-souris'],
   },
   {
     id: 'bone',
     emoji: '🦴',
-    words: ['bone'],
+    words: ['os'],
   },
   {
     id: 'brain',
     emoji: '🧠',
-    words: ['brain'],
+    words: ['cerveau'],
   },
   {
     id: 'broom',
     emoji: '🧹',
-    words: ['broom'],
+    words: ['balai'],
   },
   {
     id: 'candy',
     emoji: '🍬',
-    words: ['candy'],
+    words: ['bonbon'],
   },
   {
     id: 'ghost',
     emoji: '👻',
-    words: ['ghost'],
+    words: ['fantôme', 'fantome'],
   },
   {
     id: 'lollipop',
     emoji: '🍭',
-    words: ['lollipop'],
+    words: ['sucette'],
   },
   {
     id: 'pumpkin',
     emoji: '🎃',
-    words: ['halloween', 'pumpkin'],
+    words: ['halloween', 'citrouille'],
   },
   {
     id: 'skull',
     emoji: '💀',
-    words: ['skull'],
+    words: ['crâne', 'crane'],
   },
   {
     id: 'vampire',
@@ -57,7 +57,7 @@ export const emojis = [
   {
     id: 'witch',
     emoji: '🧙‍♀️',
-    words: ['witch'],
+    words: ['sorcière'],
   },
   {
     id: 'zombie',

@@ -29,7 +29,7 @@ export default async (client, webhook, message) => {
 
     createCommand(cmd.command).catch((err) => console.log('Error while creating the command document: ', err))
 
-    return cmd.run(client, message)
+    return cmd.run(client, message, args)
   }
 
   // -------------------- Messages without prefix --------------------
