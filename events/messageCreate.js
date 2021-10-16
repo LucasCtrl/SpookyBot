@@ -1,5 +1,5 @@
 import { MessageEmbed } from 'discord.js'
-import { createCommand } from '../models/commands.js'
+import { createCommand } from '../models/analitycs/commands.js'
 import reactMessage from '../utils/reactMessage.js'
 import currentDate from '../utils/currentDate.js'
 
@@ -27,12 +27,18 @@ export default async (client, webhook, message) => {
       .setFooter(currentDate())
     webhook.send({ embeds: [embed] })
 
-    createCommand(cmd.command)
+    createCommand(cmd.command).catch((err) => console.log('Error while creating the command document: ', err))
 
-    return cmd.run(client, message)
+    return cmd.run(client, message, args)
   }
 
   // -------------------- Messages without prefix --------------------
 
-  reactMessage(client, message, webhook)
+  if (
+    message.channel.permissionsFor(client.user).has(['USE_EXTERNAL_EMOJIS']) &&
+    message.channel.permissionsFor(client.user).has(['ADD_REACTIONS'])
+  ) {
+    // Check if the bot has the permission to react and use external emojis
+    reactMessage(client, message, webhook)
+  }
 }
