@@ -67,6 +67,6 @@ export const emojis = [
   {
     id: 'alien',
     emoji: '👽',
-    words: ['monstre', 'extraterrestre'],
+    words: ['monstre', 'extraterrestre', 'alien'],
   },
 ]
