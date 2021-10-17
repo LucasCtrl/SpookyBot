@@ -8,7 +8,7 @@ export default {
   },
 
   run: async (client, message) => {
-    message.delete()
+    message.delete().catch((err) => console.log('Error while deleting the message: ', err))
     let embed = await new MessageEmbed()
       .setColor(client.config.colors.primary)
       .setFooter(`Requested by ${message.author.username}`, message.author.avatarURL({ dynamic: true }))
