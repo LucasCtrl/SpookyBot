@@ -14,7 +14,7 @@ export default {
   },
 
   run: async (client, message, args) => {
-    message.delete()
+    message.delete().catch((err) => console.log('Error while deleting the message: ', err))
 
     let availableLang = []
     let embed
@@ -45,7 +45,9 @@ export default {
         .setDescription(`Language set to: **${args[0]}**`)
         .setFooter('This message will be deleted automatically')
 
-      updateGuildConfig(message.guild.id, { lang: args[0] })
+      await updateGuildConfig(message.guild.id, { lang: args[0] }).catch((err) =>
+        console.log('Error while updating the guild config: ', err)
+      )
     }
 
     // -------------------- Display help if not exist --------------------
@@ -67,7 +69,7 @@ export default {
     }
 
     message.channel.send({ embeds: [embed] }).then((m) => {
-      setTimeout(() => m.delete(), 20000)
+      setTimeout(() => m.delete().catch((err) => console.log('Error while deleting the message: ', err)), 20000)
     })
   },
 }
