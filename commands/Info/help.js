@@ -24,6 +24,6 @@ export default {
       }
     })
 
-    message.author.send({ embeds: [embed] })
+    message.channel.send({ embeds: [embed] })
   },
 }
