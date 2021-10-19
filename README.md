@@ -29,7 +29,8 @@ You can add languages to the robot so that it is translated and accessible to ev
 6. Test the bot is connected by running `<your-prefix>help` to get a list of commands, and then initialize the DB by running `<your-prefix>emitgc`. It should then respond with "Join <your-server> with <#> users,
 7. Test that the bot reacts to comments by typing one of the words in `lang/<your-lang>.js`. The bot should respond with an emoji! -->
 <!--
-### Docker
+
+## Docker
 
 To run the bot inside a docker container, make sure to create the .env
 file and then run the following:
@@ -41,14 +42,14 @@ docker run --name spooky-bot --env-file .env --rm -d spooky-bot
 
 Or with `docker compose up` -->
 
-## 👤 Author
+## 👤 (Author)
 
 **LucasAlt**
 * Website: https://www.lucasalt.fr
 * Twitter: [@LucasCtrlAlt](https://twitter.com/LucasCtrlAlt)
 * GitHub: [@LucasCtrl](https://github.com/LucasCtrl)
 
-## 🙏 Thanks
+## 🙏 (Thanks)
 * [**@AntoniosBarotsis**](https://github.com/AntoniosBarotsis) - Docker integration
 <!--
 * [**@marc2332**](https://github.com/marc2332) - Translation (es, ca)
@@ -57,7 +58,7 @@ Or with `docker compose up` -->
 * [**@Pervolarakis**](https://github.com/Pervolarakis) - Translation (gr)
 * [And many more!](https://github.com/LucasCtrl/SpookyBot/graphs/contributors) -->
 
-## 🤝 Contributing
+## 🤝 (Contributing)
 
 Before contributing to this project, make sure you have read the [contribution guidelines](https://github.com/LucasCtrl/SpookyBot/blob/dev/CONTRIBUTING.md)!
 
@@ -67,7 +68,7 @@ Before contributing to this project, make sure you have read the [contribution g
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
 
-## Show your support
+## (Show your support)
 
 - Give a ⭐️ if you like this project!
 - Upvote for the bot
@@ -76,6 +77,6 @@ Before contributing to this project, make sure you have read the [contribution g
 
 <a href="https://www.buymeacoffee.com/lucasalt"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=lucasalt&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
 
-## 📝 License
+## 📝 (License)
 
 This project is open source and available under the [MIT](https://github.com/LucasCtrl/SpookyBot/blob/master/LICENSE.md)
