@@ -23,6 +23,6 @@ export default {
       .addField('Memory usage ¬', `${Math.ceil(memoryStats.heapUsed / 1048576)} Mo`, true)
       .setFooter(`Requested by ${message.author.username}`, message.author.avatarURL({ dynamic: true }))
 
-    message.channel.send({ embeds: [embed] })
+    message.channel.send({ embeds: [embed] }).catch((err) => console.log('Error while sending the message: ', err))
   },
 }

@@ -16,6 +16,6 @@ export default {
         'You can vote for the bot by clicking on the following link: [https://discordbotlist.com/bots/spookybot/upvote](https://discordbotlist.com/bots/spookybot/upvote)'
       )
 
-    message.channel.send({ embeds: [embed] })
+    message.channel.send({ embeds: [embed] }).catch((err) => console.log('Error while sending the message: ', err))
   },
 }
