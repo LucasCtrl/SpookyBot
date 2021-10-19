@@ -68,8 +68,10 @@ export default {
         )
     }
 
-    message.channel.send({ embeds: [embed] }).then((m) => {
-      setTimeout(() => m.delete().catch((err) => console.log('Error while deleting the message: ', err)), 20000)
-    })
+    message.channel.send({ embeds: [embed] })
+      .then((m) => {
+        setTimeout(() => m.delete().catch((err) => console.log('Error while deleting the message: ', err)), 20000)
+      })
+      .catch((err) => console.log('Error while sending the message: ', err))
   },
 }
